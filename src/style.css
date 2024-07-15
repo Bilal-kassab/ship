@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  overflow: hidden;
+}
+
+.webgl {
+  position: fixed;
+  top: 0;
+  left: 0;
+  outline: none;
+}
+
+.lil-gui {
+  background-color: transparent;
+}
+
+.lil-gui .title {
+  background-color: #111111;
+}
+
+.lil-gui .children {
+  background-color: #42424266;
+}
+.lil-gui.output {
+  background-color: #67666666;
+}
+.output {
+  right: unset;
+  left: 15px;
+}
+
+.weight,
+.weight input {
+  color: aquamarine !important;
+}
+
+.buoyancy,
+.buoyancy input {
+  color: yellowgreen !important;
+}
+
+.drag,
+.drag input {
+  color: deeppink !important;
+}
+
+.thrust,
+.thrust input {
+  color: lime !important;
+}
+
+.wind,
+.wind input {
+  color: gold !important;
+}
+
+.acceleration,
+.acceleration input {
+  color: aqua !important;
+}
+
+.velocity,
+.velocity input {
+  color: orange !important;
+}
+
+.position,
+.position input {
+  color: yellow !important;
+}
+
+.lil-gui .controller.disabled {
+  opacity: 1;
+}
+
+#warning {
+  display: none;
+}
+
+.warning {
+  display: block !important;
+  color: rgb(6, 35, 59);
+  font-size: 40px;
+  position: absolute;
+  top: 10;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgb(91, 91, 129);
+  padding: 10px;
+  border-radius: 100000px;
+  border: black 10px double;
+  animation: strob 1.5s cubic-bezier(0, 5, 1, 5) infinite;
+}
