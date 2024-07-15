@@ -6,10 +6,10 @@ function makeGui(output, physicalVariables, paramaters, updateSunFun) {
 
   const massController = gui.add(physicalVariables, 'mass', 1000, 87000000).name('Mass');
 
-  massController.onChange(function(value) {
-    physicalVariables.oldMass=value;
-    console.log(physicalVariables.oldMass);
-  });
+  // massController.onChange(function(value) {
+  //   physicalVariables.oldMass=value;
+  //   console.log(physicalVariables.oldMass);
+  // });
 
   gui.add(physicalVariables, "gravity", 0, 20).name("Gravity");
   gui.add(physicalVariables, "currentRPM", 0, 1000).name("RPM");

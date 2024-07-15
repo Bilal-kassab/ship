@@ -24,8 +24,7 @@ const physicalVariables = {
   start: false,
   // showCollision: false,
   // collide: true,
-  oldMass:0,
-
+  
   gravity: 10,
   AirDensity: 1.2,
   waterDensity: 1000,

@@ -230,13 +230,7 @@ class PhysicsWorld {
     return alpha;
   }
   calculate_H_underWater(){
-    // console.log("OldMAss before",this.oldMass);
     const Yship=this.target.position?.y??-0.013;
-    // console.log(this.movement.y);
-    // if(this.oldMass!=this.physicalVariables.mass){
-      
-      // this.oldMass=this.physicalVariables.mass;
-      // console.log("OldMAss after",this.oldMass);
       let h=0;
       if(Yship>=0){
         h=0.013
@@ -247,18 +241,9 @@ class PhysicsWorld {
       else{
         h=Yship;
       }
-      // if(this.oldMass!=this.physicalVariables.mass){
-      //   this.oldH=Math.min(h,this.oldH);
-      //   this.oldMass=this.physicalVariables.mass;
-      // }
       this.oldH=Math.min(h,this.oldH);
-      //  console.log("oldH",this.oldH);
-      console.log("Yship",Yship);
-      // console.log("H",h);
+      // console.log("Yship",Yship);
       return Math.abs(h);
-    // }
-    // console.log("oldH",this.oldH);
-    // return this.oldH;
   }
   calculate_sigma() {
     
@@ -507,38 +492,16 @@ class PhysicsWorld {
   }
 
   move(displacement) {
-    // if(this.oldMass==this.physicalVariables.mass){
-    //   this.target.addMove(displacement.x, 0, displacement.z);
-    // }
-    // else{
-    //   this.oldMass=this.physicalVariables.mass;
-    //   console.log("Not Equ");
-    //   this.target.addMove(displacement.x, displacement.y, displacement.z);
-    // }
-    let stpo=false;
     const volume=this.calculate_volume();
       if(this.target.position?.y<=-30 && this.physicalVariables.mass>=(volume*this.physicalVariables.waterDensity)){
-        // console.log("inside if");
         this.velocity.y = Math.max(this.velocity.y, 0);
         this.acceleration.y = Math.max(this.acceleration.y, 0);
         this.target.addMove(displacement.x, 0, displacement.z);
       }
       else{
-        // if(this.target.position?.y<this.oldH){
-        //   console.log("this.target.position?.y",this.target.position?.y);
-        //   console.log("this.oldH",this.oldH);
-        //   // console.log("this.target.position?.y",this.target.position?.y==this.oldH);
-        //   this.velocity.y = Math.min(this.velocity.y, 0);
-        //   this.acceleration.y = Math.min(this.acceleration.y, 0);
-        //   this.target.addMove(displacement.x, displacement.y, displacement.z);
-        // }
-        // else{
-          console.log("inside else");
-            this.velocity.y = Math.max(this.velocity.y, 0);
+          this.velocity.y = Math.max(this.velocity.y, 0);
           this.acceleration.y = Math.max(this.acceleration.y, 0);
           this.target.addMove(displacement.x, displacement.y, displacement.z);
-        // }
-
       }
   }
 
